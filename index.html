@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillSwap - Student Skill Exchange</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header>
+        <nav class="navbar">
+
+            <h2>Skill<span>Swap</span></h2>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Explore Skills</a>
+                <a href="#requests">Requests</a>
+                <a href="#add-skill">Add Skill</a>
+            </div>
+
+            <a href="#add-skill" class="nav-btn">Join Now</a>
+
+        </nav>
+    </header>
+
+
+    <!-- HOME SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">LEARN • SHARE • GROW</p>
+
+            <h1>
+                Exchange Skills,
+                <span>Build Your Future.</span>
+            </h1>
+
+            <p>
+                Learn new skills from fellow students and
+                share your knowledge with others.
+
+                No money needed, just knowledge exchange!
+            </p>
+
+            <a href="#skills" class="main-btn">
+                Explore Skills
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="features" id="about">
+
+        <h2>Why SkillSwap?</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <h3>📚 Learn Skills</h3>
+                <p>
+                    Learn new skills from talented students
+                    and improve your knowledge.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🤝 Share Knowledge</h3>
+                <p>
+                    Teach others what you already know
+                    and exchange your skills.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌟 Grow Together</h3>
+                <p>
+                    Build connections with students
+                    and grow together.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE SKILLS SECTION -->
+
+    <section class="skills-section" id="skills">
+
+        <h2>Explore Student Skills</h2>
+
+        <p class="section-text">
+            Find students who can teach you something new.
+        </p>
+
+        <!-- Search Bar -->
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search skills... (HTML, Python, Design)"
+        >
+
+        <!-- Skill Cards -->
+
+        <div class="skill-container" id="skillContainer">
+
+
+            <!-- Student 1 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">💻</div>
+
+                <h3>HTML & CSS</h3>
+
+                <p>By Rahul Sharma</p>
+
+                <p>Can Teach: HTML & CSS</p>
+
+                <p>Wants to Learn: Python</p>
+
+                <button
+                    class="request-btn"
+                    onclick="sendRequest(this)">
+                    Send Request
+                </button>
+
+            </div>
+
+
+            <!-- Student 2 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🐍</div>
+
+                <h3>Python Programming</h3>
+
+                <p>By Priya Verma</p>
+
+                <p>Can Teach: Python</p>
+
+                <p>Wants to Learn: Graphic Design</p>
+
+                <button
+                    class="request-btn"
+                    onclick="sendRequest(this)">
+                    Send Request
+                </button>
+
+            </div>
+
+
+            <!-- Student 3 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🎨</div>
+
+                <h3>Graphic Design</h3>
+
+                <p>By Aman Gupta</p>
+
+                <p>Can Teach: Canva & Photoshop</p>
+
+                <p>Wants to Learn: Web Development</p>
+
+                <button
+                    class="request-btn"
+                    onclick="sendRequest(this)">
+                    Send Request
+                </button>
+
+            </div>
+
+
+            <!-- Student 4 -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📸</div>
+
+                <h3>Photography</h3>
+
+                <p>By Sneha Singh</p>
+
+                <p>Can Teach: Photography</p>
+
+                <p>Wants to Learn: Video Editing</p>
+
+                <button
+                    class="request-btn"
+                    onclick="sendRequest(this)">
+                    Send Request
+                </button>
+
+            </div>
+
+        </div>
+
+        <p id="noResults" hidden>
+            No matching skills found.
+        </p>
+
+    </section>
+
+
+    <!-- RECEIVED REQUESTS SECTION -->
+
+    <section class="requests-section" id="requests">
+
+        <h2>Skill Exchange Requests</h2>
+
+        <p>
+            Manage the skill exchange requests received
+            from other students.
+        </p>
+
+        <div id="requestContainer">
+
+            <!-- Sample Request -->
+
+            <div class="request-card">
+
+                <h3>Arjun Kumar</h3>
+
+                <p>Wants to Learn: HTML & CSS</p>
+
+                <p>Can Teach: Java Programming</p>
+
+                <p class="request-status">
+                    Status: Pending
+                </p>
+
+                <div class="request-buttons">
+
+                    <button
+                        class="accept-btn"
+                        onclick="acceptRequest(this)">
+                        Accept
+                    </button>
+
+                    <button
+                        class="reject-btn"
+                        onclick="rejectRequest(this)">
+                        Reject
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD YOUR SKILL SECTION -->
+
+    <section class="add-section" id="add-skill">
+
+        <h2>Share Your Skills</h2>
+
+        <p>
+            Tell other students what you can teach
+            and what you want to learn.
+        </p>
+
+        <form id="skillForm">
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="skillName"
+                placeholder="Skill You Can Teach"
+                required
+            >
+
+            <input
+                type="text"
+                id="learnSkill"
+                placeholder="Skill You Want to Learn"
+                required
+            >
+
+            <button type="submit">
+                Add My Skill
+            </button>
+
+        </form>
+
+        <p id="formMessage"></p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>SkillSwap</h2>
+
+        <p>
+            Share your knowledge.
+            Learn something new.
+        </p>
+
+        <p>
+            © 2026 Student Skill Exchange Platform
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
